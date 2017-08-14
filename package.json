@@ -1,0 +1,19 @@
+{
+  "name": "sometest",
+  "version": "1.0.0",
+  "description": "some test",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JesuisTong/someTest.git"
+  },
+  "author": "TongZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JesuisTong/someTest/issues"
+  },
+  "homepage": "https://github.com/JesuisTong/someTest#readme"
+}
