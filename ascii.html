@@ -1,0 +1,30 @@
+<html>
+  <style type="text/css">
+    body {
+      background: black;
+      color:#CCCCCC; 
+    }
+    div {
+      float: left;
+      border :1px solid #444444;
+      padding:10px;
+      margin: 10px;
+      background:#3B3B3B;
+    }
+    .ahaha {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript" src="main.js"></script>
+  <body onload="processor.doload()">
+    <div id='root'></div>
+
+    <!-- <canvas id="canvas" width="400" height="400" /> -->
+    <div>
+      <video id="video" src="./video.mp4" controls="true"/>
+    </div>
+    <div class="ahaha">
+      <canvas id="c1" width="320" height="240"/>
+    </div>
+  </body>
+</html>

@@ -1,19 +1,56 @@
 {
-  "name": "sometest",
-  "version": "1.0.0",
-  "description": "some test",
-  "main": "main.js",
+  "name": "main",
+  "version": "0.0.1",
+  "description": "就是想创一个类似与业务场景的自己的页面",
+  "main": "index.js",
   "scripts": {
+    "build": "webpack --color --progress --watch",
+    "server": "webpack-dev-server --devtool eval --color --progress --watch",
+    "watch": "node webpack.watcher.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JesuisTong/someTest.git"
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "node-notifier": "^5.1.2",
+    "nyan-progress-webpack-plugin": "^1.2.0",
+    "on-build-webpack": "^0.1.0",
+    "postcss-loader": "^1.3.3",
+    "style-loader": "^0.18.2",
+    "webpack-watcher": "^0.2.3"
   },
-  "author": "TongZ",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JesuisTong/someTest/issues"
+  "dependencies": {
+    "create-react-class": "^15.6.0",
+    "koa": "^2.3.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.1",
+    "react-transition-group": "^2.2.0",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.6.1"
   },
-  "homepage": "https://github.com/JesuisTong/someTest#readme"
+  "author": "",
+  "license": "ISC"
 }

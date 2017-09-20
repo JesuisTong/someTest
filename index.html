@@ -1,30 +1,32 @@
-<html>
-  <style type="text/css">
-    body {
-      background: black;
-      color:#CCCCCC; 
-    }
-    div {
-      float: left;
-      border :1px solid #444444;
-      padding:10px;
-      margin: 10px;
-      background:#3B3B3B;
-    }
-    .ahaha {
-      display: none;
-    }
-  </style>
-  <script type="text/javascript" src="main.js"></script>
-  <body onload="processor.doload()">
-    <div id='root'></div>
 
-    <!-- <canvas id="canvas" width="400" height="400" /> -->
-    <div>
-      <video id="video" src="./video.mp4" controls="true"/>
-    </div>
-    <div class="ahaha">
-      <canvas id="c1" width="320" height="240"/>
-    </div>
-  </body>cd
+<html lang="zh">
+  <head>
+    <style type="text/css">
+      #root {
+        width: 7.5rem;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      ! function() {
+        function a() {
+          var clientWidth = document.documentElement.clientWidth > 640 ? 640 : document.documentElement.clientWidth;
+          document.documentElement.style.fontSize = clientWidth / 7.5 + "px";
+          var div = document.createElement("div");
+          div.style.width = "7.5rem";
+          document.body.appendChild(div);
+          document.documentElement.style.fontSize = document.documentElement.style.fontSize.replace("px", "") * clientWidth / div.clientWidth + "px";
+          document.body.removeChild(div);
+        }
+        var b = null;
+        window.addEventListener("resize", function() {
+          clearTimeout(b), b = setTimeout(a, 300)
+        }, !1), a()
+        }(window);
+    </script>
+    <div id="root" />
+  </body>
+  <script type="text/javascript" src="http://localhost:8088/assets/application.bundle.js"></script>
 </html>

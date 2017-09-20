@@ -1,0 +1,36 @@
+<html>
+  <style type="text/css">
+    body {
+      background: black;
+      color:#CCCCCC; 
+    }
+    .reVa {
+      background-color: red;
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <script src="https://unpkg.com/vue"></script>
+  <body>
+    <div class="reVa">
+      {{ message }}
+      {{ color }}
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '.reVa',
+      data: {
+        message: 'R:EVAl',
+        color: setInterval(() => {
+                    var i = 'rgb(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')'
+                    return i;
+                  }, 1000),
+      }
+    })
+  </script>
+</html>
