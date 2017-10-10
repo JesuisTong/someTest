@@ -20,8 +20,6 @@
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.3.0",
@@ -39,15 +37,18 @@
     "webpack-watcher": "^0.2.3"
   },
   "dependencies": {
-    "create-react-class": "^15.6.0",
+    "history": "^4.7.2",
     "koa": "^2.3.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-redux": "^5.0.6",
     "react-router": "^4.1.2",
     "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
     "react-transition-group": "^2.2.0",
+    "redux": "^3.7.2",
     "webpack": "^3.4.0",
     "webpack-dev-server": "^2.6.1"
   },

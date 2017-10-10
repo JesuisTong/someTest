@@ -26,6 +26,8 @@ module.exports = {
   resolve: {
     alias: {
       components: path.resolve(__dirname, './webApp/Components'),
+      containers: path.resolve(__dirname, './webApp/Container'),
+      Redx: path.resolve(__dirname, './webApp/Redx'),
       static: path.resolve(__dirname, 'static'),
     },
     extensions: ['.js', '.jsx'],
@@ -34,7 +36,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.jsx$|\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader'],
       },
@@ -58,6 +60,24 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [require('autoprefixer')()],
+            },
+          },
+        ]
+      }
     ],
   },
   plugins: [

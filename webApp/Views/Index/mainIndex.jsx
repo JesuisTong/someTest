@@ -16,6 +16,7 @@ export default class Index extends Component {
       this.setState({ detail: JSON.stringify(context) })
     };
     API(this.state.value, cb);
+    
   }
   render() {
     const { value = '', detail = '' } = this.state;
