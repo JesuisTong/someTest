@@ -1,5 +1,19 @@
 {
-  "presets": ["react", "env"],
+   "presets": [
+      "react",
+      [
+          "env",
+          {
+              "targets": {
+                  "browsers": [
+                      "last 2 versions",
+                      "safari >= 7",
+                      "ie >= 9"
+                  ]
+              }
+          }
+      ]
+  ],
   "plugins": [
    "transform-object-rest-spread", 
     "transform-decorators-legacy",
