@@ -11,28 +11,36 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+// 工具组件
+import bundle from '../Commons/LazyRouter';
 
 // 视图组件
 import Index from './Index/mainIndex';
 import TodoList from './TodoList/index';
 import BottomBanner from 'components/BottomBanner';
+
+// lazy视图组件
+import Page1 from './Page/View';
 // CSS
 import '../Commons/index.css';
 
+// import a from '../Utils/View';
+// console.log(a)
+
 const store = createStore(reducer);
+
+const XXX = bundle(Page1);
 
 const List = () => (
   <Provider store={store}>
     <TodoList />
   </Provider>
 )
-const XXX = () => (
-  <img src="static/825ecc3f8794a4c2c12272d304f41bd5ac6e391f.jpg" />
-)
 const Func = () => ([
   <Router key="Router">
     <div>
       <Link to="/index">index</Link>
+      <Link to="/mainIndex" style={{ color: 'red' }}>Page1</Link>
       <Route path="/todoList" component={List} />
       <Route path="/index" component={Index} />
       <Route path="/mainIndex" component={XXX} />

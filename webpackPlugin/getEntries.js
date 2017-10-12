@@ -1,29 +1,32 @@
+const path = require('path');
 const fs = require('fs');
 
-
-// const getArrays = path => (
-//   fs.readdirSync(path).filter(i => (/\.js|\.jsx$/g.test(i)))
-// );
-
-function getEntries(path) {
-  let obj = {};
-  const arr = fs.readdirSync(path);
-  for (let i = 0; i < arr.length; i += 1) {
-    let part = [];
-    if (fs.statSync(`${path}/${arr[i]}`).isDirectory()) {
-      obj = {
-        ...obj,
-        ...getEntries(`${path}/${arr[i]}`),
-      };
-    } else if (/\.js|\.jsx$/g.test(arr[i])) {
-      part = [...part, `./${path}/${arr[i]}`];
-      obj = {
-        ...obj,
-        [`${path}/${arr[i].replace(/\.js$|\.jsx$/g, '')}`]: part,
-      };
-    }
+function getEntries(url) {
+  if (!fs.statSync(url).isDirectory()) {
+    console.error('this is not a directory');
+    return null;
   }
+  let obj = {};
+  const subPathArray = fs.readdirSync(url);
+
+  // console.log(subPathArray, 'blue');
+  if (subPathArray.some(i => (/\.jsx?$/g.test(i)))) {
+    obj = {
+      ...obj,
+      [path.join(url)]: subPathArray.filter(subPath => (!fs.statSync(path.resolve(url, subPath)).isDirectory() && /\.jsx?$/g.test(subPath))).map(i => (i && path.resolve(url, i))),
+    };
+  }
+  subPathArray.filter(subPath => (fs.statSync(path.resolve(url, subPath)).isDirectory())).forEach((i) => {
+    if (!i) return;
+    obj = {
+      ...obj,
+      ...getEntries(path.join(url, i)),
+    };
+  });
   return obj;
 }
+
+// const q = getEntries(path.resolve('webApp/Views'));
+// console.log(JSON.stringify(q, null, 4))
 
 module.exports = getEntries;
