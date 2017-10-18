@@ -10,12 +10,14 @@ function getEntries(url) {
   const subPathArray = fs.readdirSync(url);
 
   // console.log(subPathArray, 'blue');
+  // 只对当前层的js做处理
   if (subPathArray.some(i => (/\.jsx?$/g.test(i)))) {
     obj = {
       ...obj,
       [path.join(url)]: subPathArray.filter(subPath => (!fs.statSync(path.resolve(url, subPath)).isDirectory() && /\.jsx?$/g.test(subPath))).map(i => (i && path.resolve(url, i))),
     };
   }
+  // 只对当前层的文件夹做处理
   subPathArray.filter(subPath => (fs.statSync(path.resolve(url, subPath)).isDirectory())).forEach((i) => {
     if (!i) return;
     obj = {

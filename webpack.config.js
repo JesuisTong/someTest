@@ -19,11 +19,17 @@ console.log(JSON.stringify(getEntries('webApp/Views'), null, 4));
 
 
 module.exports = {
-  entry: getEntries('webApp/Views'),
+  cache: true,
+  entry: {
+    'babel-polyfill': ['babel-polyfill'],
+    main: path.resolve(__dirname, 'webApp/Commons/main.js'),
+    ...getEntries('webApp/Views'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: '[name].bundle.js',
-    chunkFilename: '[name].[chunkhash:5].js',
+    chunkFilename: '[name].[chunkhash:6].js',
+    publicPath: '/',
   },
   resolve: {
     alias: {
@@ -35,21 +41,29 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     modules: ['node_modules', path.resolve(__dirname, 'webApp')],
   },
+  resolveLoader: {
+    modules: [
+      'node_modules',
+      'loader',
+    ],
+    extensions: [".js", ".json"],
+    mainFields: ["loader", "main"]
+  },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         include: /View\.jsx?$/,
-        // include: path.resolve(__dirname, 'webApp/View'),
         use: [
           {
-            loader: 'bundle-loader',
+            loader: 'htt-loader',
             options: {
               lazy: true,
-              name: 'lazy-router'
-            },
+              name: 'lazyRouter',
+            }
           },
-        ],
+          'babel-loader'
+        ] 
       },
       {
         test: /\.jsx$|\.js$/,
@@ -153,6 +167,8 @@ module.exports = {
     'react-router-dom': 'ReactRouterDOM',
     'react-redux': 'window.ReactRedux',
     redux: 'window.Redux',
+    history: 'window.History',
+    TZ: 'window.TZ',
   },
   performance: {
     hints: 'warning',

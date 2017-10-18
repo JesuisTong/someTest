@@ -7,46 +7,43 @@ import { createStore } from 'redux';
 import reducer from 'Redx/reducer';
 // Router
 import {
-  HashRouter as Router,
+  Router,
   Route,
   Link,
+  Switch,
 } from 'react-router-dom';
-// 工具组件
-import bundle from '../Commons/LazyRouter';
 
-// 视图组件
-import Index from './Index/mainIndex';
-import TodoList from './TodoList/index';
+// 底部banner组件
 import BottomBanner from 'components/BottomBanner';
 
 // lazy视图组件
-import Page1 from './Page/View';
-// CSS
-import '../Commons/index.css';
-
-// import a from '../Utils/View';
-// console.log(a)
+import Page from './Page/View';
+import Index from './Index/View';
+import TodoList from './TodoList/View';
+import NotFound from './NotFound/View';
 
 const store = createStore(reducer);
 
-const XXX = bundle(Page1);
-
-const List = () => (
-  <Provider store={store}>
-    <TodoList />
-  </Provider>
+const formatRouter = (comp, name) => (
+  <Route path={`/${name}`} component={TZ.bundle(comp)} />
 )
+// <Link to="/Page" style={{ display: 'block' }}>Page</Link>
+// <Link to="/Index" style={{ display: 'block' }}>Index</Link>
+// <Link to="/TodoList" style={{ display: 'block' }}>TodoList</Link>
 const Func = () => ([
-  <Router key="Router">
-    <div>
-      <Link to="/index">index</Link>
-      <Link to="/mainIndex" style={{ color: 'red' }}>Page1</Link>
-      <Route path="/todoList" component={List} />
-      <Route path="/index" component={Index} />
-      <Route path="/mainIndex" component={XXX} />
-    </div>
+  <Router key="Router" history={TZ.history}>
+    <Switch>
+      {formatRouter(Page, 'Page')}
+      {formatRouter(Index, 'Index')}
+      <Route path="/TodoList">
+        <Provider store={store}>
+          {React.createElement(TZ.bundle(TodoList), null)}
+        </Provider>
+      </Route>
+      <Route component={TZ.bundle(NotFound)} />
+    </Switch>
   </Router>,
-  <BottomBanner key="botBanner" />,
+  <BottomBanner history={TZ.history} key="botBanner" />,
 ]);
 
 

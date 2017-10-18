@@ -2,7 +2,7 @@ import React from 'react';
 import TodoList from 'containers/TodoList';
 import Composition from 'containers/Composition';
 
-export default function() {
+function List() {
 	return (
 		<div>
           <Composition />
@@ -10,3 +10,5 @@ export default function() {
         </div>
 	)
 }
+
+export default List;

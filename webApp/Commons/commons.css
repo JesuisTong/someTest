@@ -19,6 +19,28 @@
   /* Rules for using icons as white on a dark background. */
   .material-icons.md-light { color: rgba(255, 255, 255, 1); }
   .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-  
+
+
+  /* 这是切换页面动画效果 */
+  .swipe-appear {
+
+  }
+  .swipe-appear.swipe-appear-active {
+
+  }
+  .swipe-enter {
+    transform: translateX(100%);
+  }
+  .swipe-enter.swipe-enter-active {
+    transition: translate 300ms ease-in;
+    transform: translateX(0);
+  }
+  .swipe-exit {
+    transform: translateX(0);
+  }
+  .swipe-exit.swipe-exit-active {
+    transform: translateX(100%);
+    transition: translate 300ms ease-in;
+  }
 }
 

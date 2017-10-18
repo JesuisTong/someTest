@@ -1,10 +1,10 @@
 import React from 'react';
-import { HashRouter, Link } from 'react-router-dom';
+import { Router, Link } from 'react-router-dom';
 import s from './index.less';
 
-export default function () {
+export default function ({ history }) {
   return (
-    <HashRouter>
+    <Router history={history}>
       <div className={s.mainMenu}>
         <Link className={s.item} to="/mainIndex">
           <div className={s.mainIndex}>
@@ -12,7 +12,7 @@ export default function () {
             <div>首页</div>
           </div>
         </Link>
-        <Link className={s.item} to="/building">
+        <Link className={s.item} to="/label">
           <div className={s.unknown}>
             <i className="material-icons material-icons.md-48">class</i>
             <div>书签</div>
@@ -24,13 +24,13 @@ export default function () {
             <div>施工中</div>
           </div>
         </Link>
-        <Link className={s.item} to="/building">
+        <Link className={s.item} to="/discovery">
           <div className={s.unknown}>
             <i className="material-icons material-icons.md-48">explore</i>
             <div>发现</div>
           </div>
         </Link>
       </div>
-    </HashRouter>
+    </Router>
   );
 }

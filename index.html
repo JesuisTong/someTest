@@ -12,6 +12,8 @@
       }
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script src="https://unpkg.com/history/umd/history.min.js"></script>
+    <script src="https://unpkg.com/react-transition-group@2.2.1/dist/react-transition-group.min.js"></script>
   </head>
   <body>
     <script>
@@ -31,6 +33,19 @@
           clearTimeout(b), b = setTimeout(a, 300)
         }, !1), a()
         }(window);
+    </script>
+    <script type="text/javascript">
+      var his = History.createBrowserHistory();
+      console.log(his.location);
+      const unlisten = his.listen((location, action) => {
+        // location is an object like window.location
+        console.log(action, location.pathname, location.state)
+      })
+      // Use push, replace, and go to navigate around.
+      his.push('/home', { some: 'state' })
+
+      // To stop listening, call the function returned from listen().
+      unlisten()
     </script>
     <div id="root" />
   </body>

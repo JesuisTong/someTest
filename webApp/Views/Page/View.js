@@ -1,6 +1,11 @@
-import Page1 from './page1';
-import Page2 from './page2';
+import React from 'react';
 
-export { Page1 };
+function Page() {
+  return [
+    <img src="../static/qqqq.png" alt="error" key="1" />,
+    <img src="../static/825ecc3f8794a4c2c12272d304f41bd5ac6e391f.jpg" alt="error" key="2" />,
+    <img src="../static/02d4fd8ea0ec08fa5a169d1453ee3d6d54fbda4c.jpg" alt="error" key="3" />,
+  ];
+}
 
-export { Page2 };
+export default Page;

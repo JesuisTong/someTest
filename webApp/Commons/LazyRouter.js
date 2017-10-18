@@ -15,42 +15,23 @@ class Bundle extends Component {
       this.load(nextProps)
     }
   }
-
-  load(props) {
-    this.setState({
-      mod: null
-    })
-    props.load((mod) => {
-      console.log(mod);
-      this.setState({
-        // handle both es imports and cjs
-        mod: mod.default ? mod.default : mod
-      })
-    })
+  // 加载
+  load = (props) => {
+    props.load(this.cb)();
+  }
+  // 回调
+  cb = (_import) => {
+    this.setState({ mod: _import.default || null });
   }
 
   render() {
-    return this.state.mod ? this.props.children(this.state.mod) : null
+    const Mod = this.state.mod;
+    return this.state.mod ? <Mod /> : null
   }
 }
 
-export default function bundle(lazyBundle) {
+export default function bundle(promise) {
   return () => (
-    <Bundle load={lazyBundle}>
-      {
-        (Comp) => (
-          !!Comp ? 
-            typeof Comp === 'function' ?
-            <Comp />
-            :
-            Object.keys(Comp).map((key, index) => {
-              const C = Comp[key];
-              return <C key={index} /> || 'router not found'
-            })
-          :
-          'router not found'
-        )
-      }
-    </Bundle>
+    <Bundle load={promise} />
   )
 }
