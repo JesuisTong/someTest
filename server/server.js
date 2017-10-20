@@ -27,7 +27,7 @@ const static = express.static(path.resolve(__dirname, '../static'));
 
 app.use(history({
 	index: '/index.html',
-	verbose: true,
+	verbose: false,
 }));
 app.use('/', dist);
 app.use('/static', static);

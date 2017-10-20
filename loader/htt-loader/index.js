@@ -8,7 +8,6 @@ module.exports.pitch = function(source) {
 	var chunkNameParam = loaderUtils.interpolateName(this, query.name + '-[1]', {
 		regExp: "webApp/Views/(.*)/",
 	});
-	console.log(chunkNameParam, '\n\n\n\n');
 	var result = [];
 	if(query.lazy) {
 		result = [

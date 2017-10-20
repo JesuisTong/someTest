@@ -1,3 +1,7 @@
+# 获得权限
+chmod 755 $0
+pwd=$1
+
 yum install -y curl
 yum install -y vim
 
@@ -13,7 +17,7 @@ echo "
     \"server_port\": 8388,  
     \"local_address\": \"127.0.0.1\",  
     \"local_port\": 1080,  
-    \"password\": \"zhubajie\",
+    \"password\": \"${pwd}\",
     \"timeout\": 4000,  
     \"method\":\"aes-256-cfb\"
 }

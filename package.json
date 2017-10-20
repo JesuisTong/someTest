@@ -45,9 +45,11 @@
   },
   "dependencies": {
     "bundle-loader": "^0.5.5",
+    "classnames": "^2.2.5",
     "connect-history-api-fallback": "^1.4.0",
     "express": "^4.16.2",
     "history": "^4.7.2",
+    "jade": "^1.11.0",
     "koa": "^2.3.0",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
@@ -60,7 +62,8 @@
     "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
     "webpack": "^3.4.0",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "webpage": "^0.3.0"
   },
   "author": "",
   "license": "ISC"

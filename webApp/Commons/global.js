@@ -1,10 +1,5 @@
-const os = (function () { // 获得设备信息
-    if (/mobile/gi.test(navigator.userAgent)) {
-        return 'phone';
-    } else {
-        return 'pc';
-    }
-}());
+
+const os = /mobile/gi.test(navigator.userAgent) ? 'phone' : 'pc';
 
 export default {
     os,
