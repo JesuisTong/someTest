@@ -1,8 +1,18 @@
 const processor = {};
 
+const ASCII_CHARS = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`\'. ';
+
 const gray2asc = (r, g, b) => {
-    if (g < 100 && r < 100 && b < 100) return '#';
-    return ' ';
+    if (!r || !g || !b) return '';
+
+    for (let i = 1; i <= ASCII_CHARS.length; i++) {
+        if (r > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length) &&
+            g > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length) &&
+            b > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length)) {
+            return ASCII_CHARS[i];
+        }
+    }
+    // if (g < 100 && r < 100 && b < 100) return '#';
 };
 
 processor.doload = () => {
@@ -48,7 +58,9 @@ processor.computeFrame = () => {
         lineASC += '\n';
         result += lineASC;
     }
-    console.log(`%c ${result}`, 'font-family: "monospace";font-size: 16px;color: blue;');
+
+    // document.querySelector('.ascii').innerHtml = result;
+    // console.log(`%c ${result}`, 'font-family: "monospace";font-size: 16px;color: blue;');
     document.querySelector('#root').innerText = result;
 };
 

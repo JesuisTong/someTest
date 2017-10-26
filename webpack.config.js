@@ -55,6 +55,7 @@ module.exports = {
         test: /\.jsx?$/,
         include: /View\.jsx?$/,
         use: [
+          'babel-loader',
           {
             loader: 'htt-loader',
             options: {
@@ -62,7 +63,6 @@ module.exports = {
               name: 'lazyRouter',
             }
           },
-          'babel-loader'
         ] 
       },
       {

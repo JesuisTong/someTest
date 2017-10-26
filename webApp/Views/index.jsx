@@ -21,6 +21,7 @@ import Page from './Page/View';
 import Index from './Index/View';
 import TodoList from './TodoList/View';
 import NotFound from './NotFound/View';
+import SendFile from './SendFile/View';
 
 const store = createStore(reducer);
 
@@ -33,6 +34,7 @@ const formatRouter = (comp, name) => (
 const Func = () => ([
   <Router key="Router" history={TZ.history}>
     <Switch>
+      {formatRouter(SendFile, 'SendFile')}
       {formatRouter(Page, 'Page')}
       {formatRouter(Index, 'Index')}
       <Route path="/TodoList">
@@ -45,7 +47,6 @@ const Func = () => ([
   </Router>,
   <BottomBanner history={TZ.history} key="botBanner" />,
 ]);
-
 
 ReactDOM.render(<Func />, document.querySelector('#root'));
 

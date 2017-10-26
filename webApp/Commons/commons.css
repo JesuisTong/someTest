@@ -1,46 +1,44 @@
 
-:global {
-  /* 这是material-design-icons推荐样式 */
-  /* Rules for sizing the icon. */
-  .material-icons.md-18 { font-size: 18px; }
-  .material-icons.md-24 { font-size: 24px; }
-  .material-icons.md-36 { font-size: 36px; }
-  .material-icons.md-48 { font-size: 48px; }
-  .material-icons.rem-x1 { font-size: 1 }
-  .material-icons.rem-x2 { font-size: 1.2 }
-  .material-icons.rem-x3 { font-size: 1.3 }
-  .material-icons.rem-x4 { font-size: 1.4 }
+/* 这是material-design-icons推荐样式 */
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.rem-x1 { font-size: 1 }
+.material-icons.rem-x2 { font-size: 1.2 }
+.material-icons.rem-x3 { font-size: 1.3 }
+.material-icons.rem-x4 { font-size: 1.4 }
 
 
-  /* Rules for using icons as black on a light background. */
-  .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-  .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
 
-  /* Rules for using icons as white on a dark background. */
-  .material-icons.md-light { color: rgba(255, 255, 255, 1); }
-  .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 
-  /* 这是切换页面动画效果 */
-  .swipe-appear {
+/* 这是切换页面动画效果 */
+.swipe-appear {
 
-  }
-  .swipe-appear.swipe-appear-active {
+}
+.swipe-appear.swipe-appear-active {
 
-  }
-  .swipe-enter {
-    transform: translateX(100%);
-  }
-  .swipe-enter.swipe-enter-active {
-    transition: translate 300ms ease-in;
-    transform: translateX(0);
-  }
-  .swipe-exit {
-    transform: translateX(0);
-  }
-  .swipe-exit.swipe-exit-active {
-    transform: translateX(100%);
-    transition: translate 300ms ease-in;
-  }
+}
+.swipe-enter {
+  transform: translateX(100%);
+}
+.swipe-enter.swipe-enter-active {
+  transition: translate 300ms ease-in;
+  transform: translateX(0);
+}
+.swipe-exit {
+  transform: translateX(0);
+}
+.swipe-exit.swipe-exit-active {
+  transform: translateX(100%);
+  transition: translate 300ms ease-in;
 }
 
