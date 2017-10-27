@@ -22,6 +22,7 @@ import Index from './Index/View';
 import TodoList from './TodoList/View';
 import NotFound from './NotFound/View';
 import SendFile from './SendFile/View';
+import Test from './Test/View';
 
 const store = createStore(reducer);
 
@@ -37,6 +38,7 @@ const Func = () => ([
       {formatRouter(SendFile, 'SendFile')}
       {formatRouter(Page, 'Page')}
       {formatRouter(Index, 'Index')}
+      {formatRouter(Test, 'Test')}
       <Route path="/TodoList">
         <Provider store={store}>
           {React.createElement(TZ.bundle(TodoList), null)}

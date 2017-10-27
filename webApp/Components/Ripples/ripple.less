@@ -1,0 +1,38 @@
+
+.outrp {
+	position: absolute;
+	background-color: currentColor;
+	border-radius: 100%;
+	width: 200%;
+	height: 200%;
+	opacity: 0.05;
+}
+:global {
+	.animation-appear {
+		opacity: 1;
+		transform: scale(0);
+	}
+	.animation-appear.animation-appear-active {
+		transition: all .45s ease-in;
+		transform: scale(1);
+		opacity: 0.05;
+	}
+	.animation-enter {
+		opacity: 1;
+		transform: scale(0);
+	}
+	.animation-enter.animation-enter-active {
+		transition: all .45s ease-in;
+		transform: scale(1);
+		opacity: 0.05;
+	}
+	/*.animation-exit {
+		opacity: 1;
+	}
+	.animation-exit.animation-exit-active {
+		transition: opacity .45s ease-out;
+		opacity: 0;
+	}*/
+}
+
+

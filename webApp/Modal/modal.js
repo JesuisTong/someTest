@@ -22,6 +22,13 @@ export default class Modal extends Component {
   state = {
     isOpened: true,
   }
+  // componentDidMount() {
+  //   // console.log('mounted', ReactDOM.findDOMNode(this));
+  //   const qwe = ReactDOM.findDOMNode(this);
+  //   qwe.addEventListener('click', () => {
+  //     console.log('?????');
+  //   })
+  // }
   handleClose = () => {
     this.setState({ isOpened: false }, () => {
       setTimeout(() => {
