@@ -10,8 +10,6 @@ export default class Ripple extends React.Component {
     componentDidMount() {
         this.listener();
         this.rect = this.node.getBoundingClientRect();
-        // this.node.addEventListener('touchstart', () => {})
-        // this.node.addEventListener('mousedown')
     }
     componentWillUnmount() {
 

@@ -1,0 +1,265 @@
+.body {
+	margin: 20px;
+	/*background-color: #000;*/
+	.wry {
+		width: 135px;
+		border: 1px solid #000;
+	}
+	.outcoupon {
+		width: 7.1rem;
+		min-height: 2.2rem;
+		&.disable,
+		&.expire {
+			.coupon {
+				display: flex;
+				flex-direction: row;
+				border: 1px solid #c8c8c8;
+				border-radius: 0.06rem;
+				.couponHead {
+					width: 2.5rem;
+					height: 2.2rem;	
+					/* todo change color */
+					background-color: #c8c8c8;
+					color: #fff;
+					/*display: inline-block;*/
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					.price {
+						font-family:DINAlternate-Bold;
+						display: flex;
+			    		align-items: center;
+			    		justify-content: center;
+						font-size: .36rem;
+						line-height: 1;
+						span {
+							padding-left: 0.1rem;
+							font-size: .98rem;
+						}
+					}
+					.condition {
+						line-height: 1;
+						font-size: .26rem;
+						text-align: center;
+						padding-top: .12rem;
+						font-family:PingFangSC-Regular;
+						font-weight: lighter;
+					}
+				}
+				.couponBody {
+					width: 4.6rem;
+					height: 2.2rem;
+					.cpt {
+						padding-top: 0.4rem;
+						display: flex;
+						.coupon-icon {
+							line-height: 1;
+							padding: 0;
+							margin-left: .25rem;
+							font-family:PingFangSC-Regular;
+							font-size: .28rem;
+							color:#c8c8c8;
+							border: 2px solid #c8c8c8;
+							border-radius: 0.06rem;
+							width: .96rem;
+							height: .36rem;
+						}
+						.coupon-title {
+							font-family:PingFangSC-Medium;
+							padding-left: .2rem;
+							font-size: .34rem;
+							color: #c8c8c8;
+							line-height: 1;
+						}
+					}
+					.cpb {
+						padding-top: .76rem;
+						color: #888;
+						font-size: .26rem;
+						line-height: 1;
+						.duration {
+							padding-left: .25rem;
+							padding-right: .42rem;
+						}
+						.detail-btn {
+							/*padding-right: .15rem;*/
+							i {
+								position: absolute;
+
+							}
+						}
+					}
+				}
+			}
+		}
+		&.expire::after {
+			position: absolute;
+			content: 'hahaa';
+			top: .13rem;
+			right: .1rem;
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+		&.enable {
+			.coupon {
+				display: flex;
+				flex-direction: row;
+				border: 1px solid #c8c8c8;
+				border-radius: 0.06rem;
+				.couponHead {
+					width: 2.5rem;
+					height: 2.2rem;	
+					color: #fff;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					&.shop {
+						background-color: '#dc3a27';
+					}
+					&.platform {
+						background-color: '#169bd9';
+					}
+					.price {
+						font-family:DINAlternate-Bold;
+						display: flex;
+			    		align-items: center;
+			    		justify-content: center;
+						font-size: .36rem;
+						line-height: 1;
+						span {
+							padding-left: 0.1rem;
+							font-size: .98rem;
+						}
+					}
+					.condition {
+						line-height: 1;
+						font-size: .26rem;
+						text-align: center;
+						padding-top: .12rem;
+						font-family:PingFangSC-Regular;
+						font-weight: lighter;
+					}
+				}
+				.couponBody {
+					width: 4.6rem;
+					height: 2.2rem;
+					.cpt {
+						padding-top: 0.4rem;
+						display: flex;
+						.coupon-icon {
+							line-height: 1;
+							padding: 0;
+							margin-left: .25rem;
+							font-family:PingFangSC-Regular;
+							font-size: .28rem;
+							color:#dc3a27;
+							border: 2px solid #dc3a27;
+							border-radius: 0.06rem;
+							width: .96rem;
+							height: .36rem;
+						}
+						.coupon-title {
+							font-family:PingFangSC-Medium;
+							padding-left: .2rem;
+							font-size: .34rem;
+							color: #393939;
+							line-height: 1;
+						}
+					}
+					.cpb {
+						padding-top: .76rem;
+						color: #888;
+						font-size: .26rem;
+						line-height: 1;
+						.duration {
+							padding-left: .25rem;
+							padding-right: .42rem;
+						}
+						.detail-btn {
+							/*padding-right: .15rem;*/
+							i {
+								position: absolute;
+
+							}
+						}
+					}
+				}
+			}
+		}
+		.info {
+			background:#f9f9f9;
+			/*background-color: blue;*/
+			border-radius:0 0 .08rem .08rem;
+			width:6.9rem;
+			height:1.3rem;
+			margin: 0 .10rem;
+		    color: #999;
+		    line-height: 1;
+		    position: relative;
+			.inf {
+				font-size: .24rem;
+			    display: inline-block;
+			    width: 50%;
+			    line-height: 1;
+			    vertical-align: middle;
+			    padding-left: .47rem;
+			    padding-top: .2rem;
+			    padding-bottom: .2rem;
+			    position: relative;
+			    box-sizing: border-box;
+			}
+			.inf:nth-child(2n):after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: -95%;
+				width: 6.7rem;
+				height: 0px;
+				border: 1px #eeeeee dashed;
+			}
+			.inf:last-child:after {
+				display: none;
+			}
+			.inf:before {
+				content: "";
+			    display: block;
+			    background: #d8d8d8;
+			    width: .06rem;
+			    height: .06rem;
+			    border-radius: 100%;
+			    transform: translate(-50%, -50%);
+			    position: absolute;
+			    top: 50%;
+			    left: .35rem;
+			}
+		}
+	}
+}
+
+:global {
+	.hei-enter {
+		height: 0;
+	}
+	.hei-enter.hei-enter-active {
+		transition: height 300ms ease-in;
+		height: 135px;
+	}
+	.hei-appear {
+		height: 0;
+	}
+	.hei-appear.hei-appear-active {
+		transition: height 300ms ease-in;
+		height: 135px;
+	}
+	.hei-exit {
+		height: 135px;
+	}
+	.hei-exit.hei-exit-active {
+		height: 0;
+		transition: height 300ms ease-in;
+	}
+}

@@ -1,6 +1,8 @@
 <html lang="zh">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Expires" CONTENT="-1">
     <style type="text/css">
       #root {
         width: 7.5rem;
@@ -11,17 +13,27 @@
         margin: 0;
         font-size: 12px;
       }
+      /* Mozilla based browsers */
+      ::-moz-selection {
+        background-color: #FFA;
+        color: #000;
+      }
+      /* Works in Safari */
+      ::selection {
+        background-color: #FFA;
+        color: #000;
+      }
     </style>
     <!-- google-icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/jquery.min.js"></script>
     <!-- react -->
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="/static/react.development.js"></script>
+    <script src="/static/react-dom.development.js"></script>
     <!-- react-router -->
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-router/4.2.0/react-router.js"></script>
-    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/4.2.2/react-router-dom.js"></script>
+    <script src="/static/react-router-dom.js"></script>
+    <script src="/static/react-router.js"></script>
     <!-- redux -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.6/react-redux.js"></script>

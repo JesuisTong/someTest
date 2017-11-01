@@ -1,8 +1,11 @@
 import React from 'react';
 import { Router, Link } from 'react-router-dom';
+// import { Button } from 'material-ui';
 import s from './index.less';
 
 export default function ({ history }) {
+  
+  // return <Button color="accent"><div>????</div></Button>
   return (
     <Router history={history}>
       <div className={s.mainMenu}>
