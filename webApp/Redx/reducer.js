@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_TODO, REMOVE, CHANGE, SHOW_ALL, HIDDEN } from './action';
+import { ADD_TODO, REMOVE, CHANGE, SHOW_ALL, HIDDEN, SELECT } from './action';
 
 
 // not pure now 
@@ -37,9 +37,19 @@ const todos = (state = [], action) => {
 			return state;
 	}
 }
+const todoMusicList = (state = [], action) => {
+	switch (action.type) {
+		case SELECT: 
+			console.log(state);
+			return state.filter((i) => (action.songName === i.songName))[0];
+		default:
+			return state;
+	}
+}
 
 const todoApp = combineReducers({
 	todos,
+	todoMusicList
 })
 
 export default todoApp;

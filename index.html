@@ -13,41 +13,33 @@
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script src="https://unpkg.com/history/umd/history.min.js"></script>
-    <script src="https://unpkg.com/react-transition-group@2.2.1/dist/react-transition-group.min.js"></script>
+    <!-- <script src="https://unpkg.com/react-transition-group@2.2.1/dist/react-transition-group.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js"></script> -->
+    <script src="./static/three.js"></script>
   </head>
   <body>
-    <script>
-      /* eslint-disable */
-      ! function() {
-        function a() {
-          var clientWidth = document.documentElement.clientWidth > 640 ? 640 : document.documentElement.clientWidth;
-          document.documentElement.style.fontSize = clientWidth / 7.5 + "px";
-          var div = document.createElement("div");
-          div.style.width = "7.5rem";
-          document.body.appendChild(div);
-          document.documentElement.style.fontSize = document.documentElement.style.fontSize.replace("px", "") * clientWidth / div.clientWidth + "px";
-          document.body.removeChild(div);
-        }
-        var b = null;
-        window.addEventListener("resize", function() {
-          clearTimeout(b), b = setTimeout(a, 300)
-        }, !1), a()
-        }(window);
-    </script>
-    <script type="text/javascript">
-      var his = History.createBrowserHistory();
-      console.log(his.location);
-      const unlisten = his.listen((location, action) => {
-        // location is an object like window.location
-        console.log(action, location.pathname, location.state)
-      })
-      // Use push, replace, and go to navigate around.
-      his.push('/home', { some: 'state' })
+    <!-- <script type="text/javascript">
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-      // To stop listening, call the function returned from listen().
-      unlisten()
-    </script>
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      document.body.appendChild( renderer.domElement );
+      var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+      var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+      var cube = new THREE.Mesh( geometry, material );
+      scene.add( cube );
+      camera.position.z = 5;
+      function animate() {
+        requestAnimationFrame( animate );
+        cube.rotation.x += 0.1;
+        // cube.rotation.y += 0.1;
+        renderer.render( scene, camera );
+      }
+      animate();
+    </script> -->
     <div id="root" />
+    <input type="range" />
   </body>
   <!-- <script src="/assets/application.bundle.js"></script> -->
 </html>

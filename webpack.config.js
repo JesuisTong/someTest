@@ -61,6 +61,7 @@ module.exports = {
             options: {
               lazy: true,
               name: 'lazyRouter',
+              regExp: 'webApp/Views/(.*)/',
             }
           },
         ] 

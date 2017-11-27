@@ -262,4 +262,35 @@
 		height: 0;
 		transition: height 300ms ease-in;
 	}
+	.openBtn {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 100%;
+		background-color: #ddbc84;
+		// position: absolute;
+		z-index: 3;
+		// left: 50%;
+		bottom: 1.6rem;
+		// transform: translateX(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.inner-circle {
+			width: 1.8rem;
+			height: 1.8rem;
+			border-radius: 100%;
+			border: 1px solid #d0b17b;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 0.8rem;
+			font-family: STSongti-SC-Regular;
+			color: #333333;
+		}
+	}
+	.openBtn:hover {
+		transition-duration: 1.5s;
+		transform-style: preserve-3d;
+		transform: rotateY(360deg);
+	}
 }

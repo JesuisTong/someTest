@@ -4,10 +4,14 @@ module.exports = function() {};
 module.exports.pitch = function(source) {
 	this.cacheable && this.cacheable();
 	var query = loaderUtils.getOptions(this) || {};
-	
-	var chunkNameParam = loaderUtils.interpolateName(this, query.name + '-[1]', {
-		regExp: "webApp/Views/(.*)/",
-	});
+	var chunkNameParam;
+	if (query.regExp) {
+		chunkNameParam = loaderUtils.interpolateName(this, query.name + '-[1]', {
+			regExp: query.regExp,
+		});
+	} else {
+		chunkNameParam = loaderUtils.interpolateName(this, query.name + '-[name]');
+	}
 	var result = [];
 	if(query.lazy) {
 		result = [

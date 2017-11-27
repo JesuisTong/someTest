@@ -15,19 +15,19 @@ export default function ({ history }) {
             <div>首页</div>
           </div>
         </Link>
-        <Link className={s.item} to="/label">
+        <Link className={s.item} to="/Page">
           <div className={s.unknown}>
             <i className="material-icons material-icons.md-48">class</i>
             <div>书签</div>
           </div>
         </Link>
-        <Link className={s.item} to="/building">
+        <Link className={s.item} to="/Test">
           <div className={s.unknown}>
             <i className="material-icons material-icons.md-48">error</i>
             <div>施工中</div>
           </div>
         </Link>
-        <Link className={s.item} to="/discovery">
+        <Link className={s.item} to="/Image3D">
           <div className={s.unknown}>
             <i className="material-icons material-icons.md-48">explore</i>
             <div>发现</div>

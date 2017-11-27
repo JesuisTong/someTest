@@ -1,0 +1,24 @@
+
+:global {
+    .slide-enter {
+        transform: translateX(100%);
+    }
+    .slide-enter.slide-enter-active {
+        transform: translateX(0);
+        transition: transform 300ms linear;
+    }
+    .slide-appear {
+        transform: translateX(100%);
+    }
+    .slide-appear.slide-appear-active {
+        transform: translateX(0);
+        transition: transform 300ms linear;
+    }
+    .slide-exit {
+        transform: translateX(0);
+    }
+    .slide-exit.slide-exit-active {
+        transform: translateX(100%);
+        transition: transform 300ms linear;
+    }
+}

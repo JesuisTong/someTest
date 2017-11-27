@@ -4,6 +4,7 @@ export const REMOVE = 'remove';
 export const CHANGE = 'change';
 export const SHOW_ALL = 'show_all';
 export const HIDDEN = 'hidden';
+export const SELECT = 'select';
 
 export const add = (text) => ({
 	type: ADD_TODO,
@@ -29,3 +30,8 @@ export const hidden = (index) => ({
 	type: HIDDEN,
 	index,
 })
+
+export const select = (songName) => ({
+	type: SELECT,
+	songName,
+});
