@@ -1,14 +1,12 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: 'airbnb',
-  "env": {
-    "browser": true,
-    "node": true,
-    "mocha": true
+  env: {
+    browser: true,
+    node: true,
+    mocha: true,
   },
   globals: {
-    React: true,
-    ReactDOM: true,
     $: true,
     TZ: true,
   },
@@ -21,7 +19,10 @@ module.exports = {
   },
   plugins: ['react', 'jsx-a11y', 'import'],
   rules: {
-    'import/no-unresolved': [2, { ignore: ['^components', '^Redx'] }],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'import/extensions': 0,
+    'import/no-unresolved': [2, { 'ignore': ['^components', '^Redx'] }],
+    'import/no-extraneous-dependencies': 0,
+    'no-underscore-dangle': ["error", { "allowAfterThis": true }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
   },
 };

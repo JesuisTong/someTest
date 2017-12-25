@@ -2,17 +2,17 @@
 const path = require('path');
 
 // webpack plugin
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const Nyanprogresswebpackplugin = require('nyan-progress-webpack-plugin');
 const Watch = require('./webpackPlugin/watch');
 // const notifier = require('node-notifier');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
 
 
 // custom plugin
-const desolation = require('./webpackPlugin/Desolation');
+// const desolation = require('./webpackPlugin/Desolation');
 const getEntries = require('./webpackPlugin/getEntries');
 
 console.log(JSON.stringify(getEntries('webApp/Views'), null, 4));

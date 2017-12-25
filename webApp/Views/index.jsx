@@ -27,7 +27,6 @@ const formatRouter = (comp, name) => (
   <Route
     path={`/${name}`}
     render={(props) => {
-      console.log(props);
       const Comp = TZ.bundle(comp);
       return <Comp {...props} />;
     }}
