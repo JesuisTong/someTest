@@ -22,6 +22,7 @@ module.exports = {
     'import/extensions': 0,
     'import/no-unresolved': [2, { 'ignore': ['^components', '^Redx'] }],
     'import/no-extraneous-dependencies': 0,
+    "indent": ["error", 4],
     'no-underscore-dangle': ["error", { "allowAfterThis": true }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
   },

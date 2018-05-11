@@ -198,8 +198,14 @@ export default class TT extends React.Component {
             alt="error"
             ref={(a) => { this.hat = a; }}
             width="64px"
-            height="64px"            
+            height="64px"
           />
+          <img
+            className={s.modifyHat}
+            src="static/jilu.png"
+            alt="error"
+          />
+          <canvas ref={(s) => {this.cvn = s}}/>
         </div>
       </div>
     );

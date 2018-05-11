@@ -19,7 +19,7 @@ import NotFound from './NotFound/View';
 import SendFile from './SendFile/View';
 import Test from './Test/View';
 import Music from './Music/View';
-import Image3D from './3DImage/View';
+import Image3D from './ImageList/View';
 
 const store = createStore(reducer);
 

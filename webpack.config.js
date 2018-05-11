@@ -1,6 +1,6 @@
 // node modules
 const path = require('path');
-
+const Javis = require('webpack-jarvis');
 // webpack plugin
 // const webpack = require('webpack');
 const Nyanprogresswebpackplugin = require('nyan-progress-webpack-plugin');
@@ -131,6 +131,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new Nyanprogresswebpackplugin(),
     new Watch(),
+    new Javis(),
     // new webpack.HotModuleReplacementPlugin(),
     // new webpack.NamedModulesPlugin(),
   ],
