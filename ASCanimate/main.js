@@ -1,6 +1,9 @@
 const processor = {};
 
-const ASCII_CHARS = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`\'. ';
+const ASCII_CHARS = '$$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'
+                        + '\\'
+                        + "'"
+                        + '. ';
 
 const gray2asc = (r, g, b) => {
     if (!r || !g || !b) return '';
@@ -9,7 +12,7 @@ const gray2asc = (r, g, b) => {
         if (r > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length) &&
             g > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length) &&
             b > 255 * ((ASCII_CHARS.length - i) / ASCII_CHARS.length)) {
-            return ASCII_CHARS[i];
+            return ASCII_CHARS[i] || ' ';
         }
     }
     // if (g < 100 && r < 100 && b < 100) return '#';
@@ -29,9 +32,7 @@ processor.doload = () => {
 processor.timerCallback = () => {
     if (this.video.paused || this.video.ended) return;
     processor.computeFrame();
-    setTimeout(() => {
-        processor.timerCallback();
-    }, 1000 / 60);
+    setTimeout(processor.timerCallback, 1000 / 60);
 };
 
 processor.computeFrame = () => {
@@ -44,9 +45,10 @@ processor.computeFrame = () => {
     //     const r = frame.data[i * 4 + 0];
     //     const g = frame.data[i * 4 + 1];
     //     const b = frame.data[i * 4 + 2];
-    // }
+    // } 640 480
     // this.context.putImageData(frame, 0, 0);
-    for (let lineHeight = 0; lineHeight < this.height; lineHeight += 14) {
+    console.log(frame);
+    for (let lineHeight = 0; lineHeight <= this.height; lineHeight += 16) {
         let lineASC = '';
         for (let lineFlag = 0; lineFlag < this.width; lineFlag += 6) {
             lineIndex = (lineHeight * this.width + lineFlag) * 4;
